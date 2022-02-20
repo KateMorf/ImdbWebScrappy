@@ -57,7 +57,7 @@ def save_dataset_csv(df, filename):
 
 
 def save_dataset_db(df, conn_string, table_name):
-    # conn_string = 'postgres://user:password@host/database'
+    # conn_string = 'postgresql://user:password@host/database'
 
     db = create_engine(conn_string)
     conn = db.connect()
@@ -82,8 +82,8 @@ if __name__ == '__main__':
     print(df_win.shape)
     print(df_nom.shape)
 
-    conn_string = 'postgres://postgres:root@localhost/imdb'
-    # conn_string = 'postgres://user:password@host/database'
+    conn_string = 'postgresql://postgres:root@localhost/imdb'
+    # conn_string = 'postgresql://user:password@host/database'
 
     save_dataset_db(df_win, conn_string,'tb_oscar_best_pictures_winners')
     save_dataset_db(df_nom, conn_string,'tb_oscar_best_pictures_nominees')
